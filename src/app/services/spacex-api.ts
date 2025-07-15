@@ -17,13 +17,22 @@ export class SpacexApiService {
         rocket: launch.rocket,
         success: launch.success,
         upcoming: launch.upcoming,
-        crew: launch.crew,
         flight_number: launch.flight_number,
       })))
       );
     }
     getPastlaunches(): Observable<Launch[]> {
-      return this.http.get<Launch[]>(`${this.baseUrl}/launches/past`);
+      return this.http.get<Launch[]>(`${this.baseUrl}/launches/past`).pipe(map(launches =>launches.map(launch => ({
+        id: launch.id,
+        name: launch.name,
+        date_local: launch.date_local,
+        details: launch.details,
+        rocket: launch.rocket,
+        success: launch.success,
+        upcoming: launch.upcoming,
+        flight_number: launch.flight_number,
+      })))
+      );
     }
     getLaunchById(id: string): Observable<Launch> {
       return this.http.get<Launch>(`${this.baseUrl}/launches/${id}`);

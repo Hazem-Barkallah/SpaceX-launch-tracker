@@ -6,6 +6,5 @@ export interface Launch {
     rocket: string;
     success?: boolean;
     upcoming: boolean;
-    crew: string[];
     flight_number: number;
 }

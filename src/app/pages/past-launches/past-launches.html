@@ -1,1 +1,20 @@
-<p>past-launches works!</p>
+<body>
+    <section id="launches" class="launches-section">
+        <h2 class="section-title">Record of all past launches</h2>
+        <div class="launches-grid" id="launchesGrid" *ngFor="let launch of launches">
+            <div class="launch-card">
+            <h2>{{launch.name}}</h2>
+                    <p><strong>Date:</strong> {{launch.date_local | date:'medium'}}</p>
+                    <p><strong>Rocket:</strong> {{launch.rocket}}</p>
+                    <p><strong>Flight Number:</strong> {{launch.flight_number}}</p>
+                    <ng-container *ngIf="launch.success;else fail">
+                        <p><strong>Success:  </strong><span id="success">Succeeded</span></p>
+                    </ng-container>
+                    <ng-template #fail>
+                        <p><strong>Success:  </strong><span id="fail">Failed</span></p>
+                        </ng-template>
+                        <p class="detail-text">{{launch.details? launch.details : 'No details available'}}</p>
+            </div>
+        </div>
+    </section>
+</body>
