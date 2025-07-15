@@ -1,15 +1,20 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Launch } from '../models/launch';
 @Injectable({
   providedIn: 'root'
 })
-export class SpacexApi {
+export class SpacexApiService {
   private baseUrl = 'https://api.spacexdata.com/v4';
-  constructor(private http: HttpClient) {}
-
+  private http=inject(HttpClient);
     getUpcomingLaunches(): Observable<Launch[]> {
       return this.http.get<Launch[]>(`${this.baseUrl}/launches/upcoming`);
+    }
+    getPastlaunches(): Observable<Launch[]> {
+      return this.http.get<Launch[]>(`${this.baseUrl}/launches/past`);
+    }
+    getLaunchById(id: string): Observable<Launch> {
+      return this.http.get<Launch>(`${this.baseUrl}/launches/${id}`);
     }
 }

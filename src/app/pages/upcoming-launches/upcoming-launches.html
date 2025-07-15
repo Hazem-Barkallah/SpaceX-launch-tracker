@@ -1,0 +1,8 @@
+<ng-container *ngFor="let launch of launches">
+    <div class="launch-card">
+        <h2>{{ launch.name }}</h2>
+        <p>Date: {{ launch.date}}</p>
+        <p>Rocket: {{ launch.rocket }}</p>
+        <p>Status: {{ launch.success ? 'Successful' : 'Failed' }}</p>
+    </div>
+</ng-container>
