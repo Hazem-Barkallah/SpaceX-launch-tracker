@@ -36,26 +36,9 @@ body {
     overflow: hidden;
 }
 
-.launch-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
 .launch-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    border-color: rgba(255, 107, 107, 0.3);
-}
-
-.launch-card:hover::before {
-    opacity: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .launch-card h2 {
@@ -75,16 +58,6 @@ body {
 .launch-card p strong {
     color: #ff6b6b;
     font-weight: 600;
-}
-
-.success-indicator {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 #success {

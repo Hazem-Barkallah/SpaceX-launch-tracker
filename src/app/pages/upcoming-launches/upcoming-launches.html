@@ -1,9 +1,14 @@
-<ng-container *ngFor="let launch of launches">
-    <div class="launch-card">
-        <h2>{{ launch.name }}</h2>
-        <p>Date: {{ launch.date_local| date:'medium' }}</p>
-        <p>Rocket: {{ launch.rocket }}</p>
-        <p>Flight Number: {{ launch.flight_number }}</p>
-        <p>Details: {{ launch.details || 'No details available' }}</p>
+<body>
+    <div id="launches" class="launches-section">
+        <h2 class="section-title">Upcoming launches</h2>
+        <div class="launches-grid" id="launchesGrid" *ngFor="let launch of launches">
+            <div class="launch-card">
+            <h2>{{launch.name}}</h2>
+                    <p><strong>Date:</strong> {{launch.date_local | date:'medium'}}</p>
+                    <p><strong>Rocket:</strong> {{launch.rocket}}</p>
+                    <p><strong>Flight Number:</strong> {{launch.flight_number}}</p>
+                    <p class="detail-text">{{launch.details? launch.details : 'No details available'}}</p>
+            </div>
+        </div>
     </div>
-</ng-container>
+</body>
