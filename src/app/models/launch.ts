@@ -1,11 +1,11 @@
 export interface Launch {
     id: string;
     name: string;
-    date: string;
+    date_local: string;
     details?: string;
     rocket: string;
     success?: boolean;
     upcoming: boolean;
-    crew?: string[];
+    crew: string[];
     flight_number: number;
 }
