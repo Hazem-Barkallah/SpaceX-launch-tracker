@@ -1,0 +1,7 @@
+<div class="launch-card">
+            <h2>{{launch().name}}</h2>
+                    <p><strong>Date:</strong> {{launch().date_local | date:'medium'}}</p>
+                    <p><strong>Rocket:</strong> {{launch().rocket}}</p>
+                    <p><strong>Flight Number:</strong> {{launch().flight_number}}</p>
+                    <p class="detail-text">{{launch().details? launch().details : 'No details available'}}</p>
+            </div>
