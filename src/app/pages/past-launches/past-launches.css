@@ -1,10 +1,4 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: #000;
-    color: #fff;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+
 .launches-section {
     padding: 80px 20px;
     max-width: 1200px;
@@ -14,7 +8,7 @@ body {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 60px;
+    margin-bottom: -10px;
     font-weight: 300;
     letter-spacing: 1px;
 }
@@ -34,4 +28,31 @@ body {
     padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color:white
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    line-height: 2.5;
+}
+.activebtn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #e94560;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.disabledbtn{
+    padding: 10px 15px;
+    border: none;
+    background-color: #dba3ad;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.activebtn:hover {
+    background-color: #d83c54;
 }

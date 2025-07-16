@@ -1,9 +1,16 @@
-<body>
-    <input type="text" class="search-bar" placeholder="Search past launches..." [(ngModel)]="searchName" (ngModelChange)="filterLaunchesByLaunchName(searchName)" />
-    <div id="launches" class="launches-section">
-        <h2 class="section-title">Upcoming launches</h2>
-        <div class="launches-grid" id="launchesGrid" *ngFor="let launch of launches">
-            <upcoming-launch-card [launch]="launch"></upcoming-launch-card>
-        </div>
+<input type="text" class="search-bar" placeholder="Search upcoming launches..." [(ngModel)]="searchName"
+    (ngModelChange)="onSearchChange()" />
+<div class="launches-section">
+    <h2 class="section-title">Record of all past launches</h2>
+    <p style="text-align: center;">(Launches = {{ filteredLaunches.length }})</p>
+    <div class="launches-grid" id="launchesGrid" *ngFor="let launch of launchesToDisplay">
+        <upcoming-launch-card [launch]="launch"></upcoming-launch-card>
     </div>
-</body>
+    <div class="pagination">
+        <button (click)="prevPage()" [ngClass]="currentPage == 1? 'disabledbtn':'activebtn'">Previous</button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button (click)="nextPage()" [ngClass]="currentPage == totalPages? 'disabledbtn':'activebtn'">
+            Next
+        </button>
+    </div>
+</div>
