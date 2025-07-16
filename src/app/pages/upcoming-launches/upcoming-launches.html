@@ -1,4 +1,5 @@
 <body>
+    <input type="text" class="search-bar" placeholder="Search past launches..." [(ngModel)]="searchName" (ngModelChange)="filterLaunchesByLaunchName(searchName)" />
     <div id="launches" class="launches-section">
         <h2 class="section-title">Upcoming launches</h2>
         <div class="launches-grid" id="launchesGrid" *ngFor="let launch of launches">
