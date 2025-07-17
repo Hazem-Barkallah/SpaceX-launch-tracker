@@ -479,3 +479,12 @@
     font-size: 0.9rem;
     z-index: 2;
 }
+.rockets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}

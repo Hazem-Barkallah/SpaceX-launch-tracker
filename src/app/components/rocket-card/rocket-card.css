@@ -1,0 +1,108 @@
+
+.rocket-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 20px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+    height: 90vh;
+}
+
+.rocket-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.rocket-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.rocket-card:hover .rocket-image {
+    transform: scale(1.05);
+}
+
+.rocket-details {
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.rocket-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+}
+
+
+.rocket-company,
+.rocket-active,
+.rocket-boosters {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.rocket-company,.rocket-boosters{
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.rocket-active {
+    color: #4ecdc4;
+    font-weight: 600;
+}
+.popup{
+    position:fixed; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:90vh; 
+    background:rgba(0,0,0,1); 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    z-index:1000
+}
+.popup-content{
+    background: rgba(0,0,0,1); 
+    padding:20px; 
+    border-radius:8px; 
+    max-width:450px; 
+    width:100%; 
+    position:relative;
+    font-size: small;
+}
+#closeButton{
+    color: white;
+    position:absolute; 
+    top: 5px; 
+    right: 5px;
+    background:none; 
+    border:none; 
+    font-size:1.5rem; 
+    cursor:pointer;
+}
+.popup-image {
+    width:30%; 
+    height:50px;
+    border-radius:8px;
+}

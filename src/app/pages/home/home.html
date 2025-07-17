@@ -51,8 +51,8 @@
         </div>
     </div>
 </div>
-<div class="about-section">
-    <div class="container" >
+<div class="about-section" data-aos="fade-down" data-aos-duration="1200">
+    <div class="container">
         <div class="section-header">
             <div class="section-subtitle">Our Mission</div>
             <h2 class="section-title">About SpaceX</h2>
@@ -63,7 +63,7 @@
             </p>
         </div>
 
-        <div class="about-content">
+        <div class="about-content" data-aos="fade-down" data-aos-duration="1200">
             <div class="about-text">
                 <h3>Pioneering the Future</h3>
                 <p>
@@ -86,15 +86,15 @@
                     <img src="assets/Elon Musk.png" alt="Elon Musk" width="100%" height="100%">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/dragon capsule.png" alt=""  width="100%" height="100%">
+                    <img src="assets/dragon capsule.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/hq.png" alt=""  width="100%" height="100%">
+                    <img src="assets/hq.png" alt="" width="100%" height="100%">
                 </div>
             </div>
         </div>
 
-        <div class="mission-stats">
+        <div class="mission-stats" data-aos="fade-down" data-aos-duration="1200">
             <div class="stat-item">
                 <div class="stat-number">200+</div>
                 <div class="stat-label">Total Launches</div>
@@ -109,7 +109,7 @@
             </div>
         </div>
 
-        <div class="vision-section">
+        <div class="vision-section" data-aos="fade-down" data-aos-duration="1200">
             <h3>Our Vision</h3>
             <p class="vision-text">
                 "You want to wake up in the morning and think the future is going to be great - and that's what being a
@@ -120,8 +120,16 @@
         </div>
     </div>
 </div>
-<div id=rockets class="rockets">
+<div id=rockets class="about-text" data-aos="fade-down" data-aos-duration="1200">
     <h1 class="rockets-title">
         <span>Our Rockets</span>
     </h1>
+    <p>Engineered for reliability, our rockets are designed to deliver payloads to orbit and beyond with unprecedented
+        efficiency and reusability.
+    </p>
+    <div class="rockets-grid">
+        <div *ngFor="let rocket of rockets"  data-aos="fade-down" data-aos-duration="900">
+            <rocket-card [rocket]="rocket"></rocket-card>
+        </div>
+    </div>
 </div>

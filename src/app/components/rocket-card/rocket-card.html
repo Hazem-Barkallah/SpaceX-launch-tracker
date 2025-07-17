@@ -1,0 +1,23 @@
+<div class="rocket-card" (click)="openRocketDetails(rocket())">
+    <img [src]="rocket().flickr_images[0]" [alt]="rocket().name" class="rocket-image">
+    <div class="rocket-details">
+        <h3 class="rocket-name">{{ rocket().name }}</h3>
+        <p class="rocket-description">{{ rocket().description }}</p>
+        <p class="rocket-company">{{ rocket().company }}</p>
+        <p class="rocket-active">
+            Active: {{ rocket().active ? 'Yes' : 'No' }}
+        </p>
+    </div>
+</div>
+<div class="popup" *ngIf="selectedRocket"  data-aos="flip-right" data-aos-duration="900">
+    <div class="popup-content">
+        <button (click)="closeModal()" id="closeButton">X</button>
+        <img [src]="selectedRocket.flickr_images[0]" class="popup-image">
+        <h3 class="rocket-name">{{ selectedRocket.name }}</h3>
+        <div *ngFor="let item of selectedRocket | keyvalue">
+            <div *ngIf="!isObject(item.value)&&item.key!='flickr_images' && item.key!=='id' && item.key!=='name'">
+                <p>{{ item.key }}: <strong>{{item.value }}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
