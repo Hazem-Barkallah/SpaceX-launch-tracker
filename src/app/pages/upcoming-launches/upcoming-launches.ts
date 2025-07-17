@@ -20,7 +20,7 @@ export class UpcomingLaunchesComponent {
   totalPages: number = 1;
 
   ngOnInit() {
-    this.SpacexApiService.getPastlaunches().subscribe((launches) => {
+    this.SpacexApiService.getUpcomingLaunches().subscribe((launches) => {
       this.launches = launches;
       this.applyFiltersAndPagination();
     });
