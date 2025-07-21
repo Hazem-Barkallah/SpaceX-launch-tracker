@@ -3,11 +3,11 @@ import { Inject, PLATFORM_ID } from '@angular/core';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
-import * as AOS from 'aos';
-
+import { Navbar } from './components/navbar/navbar';
+import { Footer } from './components/footer/footer';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterModule],
+  imports: [RouterOutlet,RouterModule, Navbar,Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

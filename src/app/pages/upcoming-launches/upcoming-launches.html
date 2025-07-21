@@ -1,7 +1,7 @@
 <input type="text" class="search-bar" placeholder="Search upcoming launches..." [(ngModel)]="searchName"
     (ngModelChange)="onSearchChange()" />
 <div class="launches-section">
-    <h2 class="section-title">Record of all past launches</h2>
+    <h2 class="section-title">Record of all upcoming launches</h2>
     <p style="text-align: center;">(Launches = {{ filteredLaunches.length }})</p>
     <div class="launches-grid" id="launchesGrid" *ngFor="let launch of launchesToDisplay">
         <upcoming-launch-card [launch]="launch"></upcoming-launch-card>

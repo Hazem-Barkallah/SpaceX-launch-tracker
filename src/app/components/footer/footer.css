@@ -1,0 +1,32 @@
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #fff;
+}
