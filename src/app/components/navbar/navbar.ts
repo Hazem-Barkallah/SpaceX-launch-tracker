@@ -7,5 +7,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.css'
 })
 export class Navbar {
-
+  
 }
