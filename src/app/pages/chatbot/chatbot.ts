@@ -1,33 +1,33 @@
 import { Component } from '@angular/core';
-import { Ask } from '../../services/ask';
+import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 @Component({
-  selector: 'app-chatbot',
+  selector: 'app-chat-bot',
   templateUrl: './chatbot.html',
-  imports:[FormsModule,CommonModule],
-  styleUrl: './chatbot.css'
+  imports: [FormsModule,CommonModule],
+  styleUrls: ['./chatbot.css']
 })
-export class ChatbotComponent {
+export class ChatBotComponent {
   question = '';
   reply = '';
   loading = false;
 
-  constructor(private askService: Ask) {}
+  constructor(private http: HttpClient) { }
 
-  submitQuestion() {
-    if (!this.question.trim()) return;
+  askBot() {
     this.loading = true;
-
-    this.askService.askGPT(this.question).subscribe({
-      next: (res) => {
-        this.reply = res.reply;
-        this.loading = false;
-      },
-      error: (err) => {
-        this.reply = 'Error talking to the bot.';
-        this.loading = false;
-      }
-    });
+    this.http.post<any>('http://localhost:4000/api/ask', { question: this.question })
+      .subscribe({
+        next: res => {
+          this.reply = res.answer;
+          this.loading = false;
+        },
+        error: err => {
+          this.reply = 'Error from server.';
+          this.loading = false;
+        }
+      });
   }
 }

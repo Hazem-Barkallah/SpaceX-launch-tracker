@@ -2,12 +2,12 @@
     <h2 class="chatbox-title">Ask SpaceX Assistant</h2>
     <div class="text-area">
         <input [(ngModel)]="question" placeholder="Ask anything about SpaceX..." class="input-field"/>
-        <button (click)="submitQuestion()" [disabled]="loading" class="submit-button">
+        <button (click)="askBot()" [disabled]="loading" class="submit-button">
             {{ loading ? 'Thinking...' : 'Send' }}
         </button>
     </div>
 
     <div *ngIf="reply" class="reply">
-        <strong>CLAUDE:</strong> {{ reply }}
+        <strong>ASSISTANT:</strong> {{ reply }}
     </div>
 </div>
