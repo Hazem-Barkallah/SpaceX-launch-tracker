@@ -1,0 +1,36 @@
+<div class="profile-cover">
+    <div class="profile-container">
+        <div class="profile-info">
+            <button *ngIf="!isEditing" class="edit-button" (click)="handleProfileHeaderChange()">Edit</button>
+            <button *ngIf="isEditing" class="edit-button" (click)="handleProfileHeaderChange()">Save</button>
+            <div class="profile-info-header">
+                <img src="assets/DSC_046.jpg" alt="Profile Picture" class="profile-pic">
+                <ng-container *ngIf="!isEditing; else editMode ">
+                    <p class="profile-name">{{ profile.name }}</p>
+                    <i>{{ profile.occupation }}</i>
+                    <p class="profile-location">{{ profile.location }}</p>
+                    <p>{{ profile.email }}</p>
+                    <button class="send-message">Send Message</button><button class="share-profile">Share
+                        Profile</button>
+                </ng-container>
+                <ng-template #editMode>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <label for="">Name:</label>
+                        <input type="text" [(ngModel)]="profile.name" value="Hazem Barkallah">
+                        <label for="">Occupation:</label>
+                        <input type="text" [(ngModel)]="profile.occupation" value="SpaceX Enthusiast">
+                        <label for="">Location:</label>
+                        <input type="text" [(ngModel)]="profile.location" value="Djerba, Tunisia">
+                        <label for="">Email:</label>
+                        <input type="email" [(ngModel)]="profile.email" value="barkhazem@gmail.com">
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="profile-info">
+            <h3 id="skills">Skills</h3>
+            <div class="skills-list">
+                <span class="skill-name" *ngFor="let skill of spaceSkills">{{ skill }}</span>
+            </div>
+        </div>
+    </div>

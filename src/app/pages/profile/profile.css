@@ -1,0 +1,112 @@
+.profile-cover {
+    height: 200vh;
+    padding: 20px;
+    position: relative;
+    background-image: url('/assets/hq.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.profile-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    pointer-events: none;
+}
+.profile-container{
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 50px 0;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    background-color:rgb(29, 25, 25)
+}
+.profile-info{
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 90%;
+}
+.profile-info-header{
+    font-size: 15px;
+}
+.profile-pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile-name{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.profile-location{
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 10px;
+}
+.send-message, .share-profile {
+    margin: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e94560;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+.edit-button {
+    position: absolute;
+    padding: 8px 15px;
+    border: solid 2px #ccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    right: 0;
+    margin-right: 40px;
+}
+.edit-button:hover {
+    border: solid 2px #e94560;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#skills {
+    font-size: 20px;
+    color: #e94560;
+    text-align: start;
+}
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-name{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}

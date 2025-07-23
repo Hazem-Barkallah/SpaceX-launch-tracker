@@ -2,15 +2,14 @@
     margin-top: 60px;
 }
 .chatbox{
-    position: relative;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
 
 }
 .text-area{
     position: absolute;
-    bottom: 0;
     display: flex;
+    bottom: 25%;
     width: 100%;
 }
 .input-field {
