@@ -1,8 +1,5 @@
 <div class="login-container">
     <div class="login-card">
-        <div class="profile-image-container">
-            <div class="profile-image"></div>
-        </div>
 
         <h1 class="login-title">Log In</h1>
 
@@ -34,9 +31,8 @@
                     <input [type]="showPassword() ? 'text' : 'password'" id="password" formControlName="password"
                         placeholder="Enter your password"
                         [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-                    <button type="button" class="toggle-password" (click)="togglePasswordVisibility()"
-                        [attr.aria-label]="showPassword() ? 'Hide password' : 'Show password'">
-                        <i class="material-icons">{{ showPassword() ? 'Hide' : 'Show' }}</i>
+                    <button type="button" class="toggle-password" (click)="togglePasswordVisibility()">
+                        <i class="material-icons">{{ showPassword() ? 'visibility_off' : 'visibility' }}</i>
                     </button>
                 </div>
                 @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {

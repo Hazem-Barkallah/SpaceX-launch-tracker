@@ -1,10 +1,11 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, PLATFORM_ID } from '@angular/core';
+import { inject, Inject, PLATFORM_ID } from '@angular/core';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,RouterModule, Navbar,Footer],
@@ -23,4 +24,5 @@ export class App {
     });
   }
 }
+  router = inject(Router);
 }

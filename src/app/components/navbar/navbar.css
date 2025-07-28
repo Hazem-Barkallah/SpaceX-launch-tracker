@@ -60,3 +60,6 @@
 .nav-links a:hover {
     color: #e94560;
 }
+.material-icons {
+    font-size: 20px;
+}

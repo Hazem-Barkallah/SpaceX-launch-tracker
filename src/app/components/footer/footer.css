@@ -6,7 +6,8 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 40px
+    margin: 40px;
+    z-index: 5;
 }
 
 .footer-copyright {
